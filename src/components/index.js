@@ -9,3 +9,6 @@ export { default as VideoDetail } from './VideoDetail';
 export { default as SearchFeed } from './SearchFeed';
 export { default as Videos } from './Videos';
 export { default as Sidebar } from './Sidebar';
+export { default as Login } from './Login';
+export { default as Signup } from './Signup';
+export { default as ForgotPassword } from './ForgotPassword';

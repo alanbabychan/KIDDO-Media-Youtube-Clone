@@ -16,17 +16,29 @@ const Feed = () => {
     }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
-      <Box sx={{ height: { sx: "auto", md: "92vh" }, borderRight: "1px solid #3d3d3d", px: { sx: 0, md: 2 } }}>
+    <Stack sx={{ flexDirection: { xs: "column", md: "row" } }}>
+      <Box sx={{ 
+        height: { xs: "auto", md: "92vh" }, 
+        borderRight: "1px solid #3d3d3d", 
+        px: { xs: 0, md: 2 },
+        width: { xs: "100%", md: "240px" },
+        minWidth: "240px"
+      }}>
         <Sidebar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         
-        <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: "#fff", }}>
+        <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: "#fff", px: 2 }}>
           Copyright © 2025 KIDDO
         </Typography>
       </Box>
 
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
-        <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
+      <Box sx={{ 
+        overflowY: "auto", 
+        height: "90vh", 
+        flex: 1,
+        p: { xs: 1, md: 3 },
+        maxWidth: "calc(100vw - 240px)"
+      }}>
+        <Typography variant="h4" fontWeight="bold" mb={3} sx={{ color: "white" }}>
           {selectedCategory} <span style={{ color: "#FC1503" }}>videos</span>
         </Typography>
 
