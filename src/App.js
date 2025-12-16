@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from '@mui/material';
 
-import { ChannelDetail, VideoDetail, SearchFeed, Navbar, Feed, Login, Signup, ForgotPassword } from './components';
+import { ChannelDetail, VideoDetail, SearchFeed, Navbar, Feed, Login, Signup, ForgotPassword, SubscriptionPlans, AdBanner } from './components';
 
 const App = () => (
   <BrowserRouter>
@@ -15,7 +15,9 @@ const App = () => (
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/subscription' element={<SubscriptionPlans />} />
       </Routes>
+      <AdBanner />
     </Box>
   </BrowserRouter>
 );

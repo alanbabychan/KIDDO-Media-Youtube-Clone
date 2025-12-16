@@ -11,8 +11,30 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateInput = () => {
+    const { emailOrMobile } = formData;
+    
+    // Check if it's email format
+    if (emailOrMobile.includes('@')) {
+      if (!emailOrMobile.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        setError('Please enter a valid email address');
+        return false;
+      }
+    } else {
+      // Check if it's mobile number
+      if (!/^\d{10}$/.test(emailOrMobile)) {
+        setError('Mobile number must be exactly 10 digits');
+        return false;
+      }
+    }
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!validateInput()) return;
+    
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const user = users.find(u => 
       (u.email === formData.emailOrMobile || u.mobile === formData.emailOrMobile) && 

@@ -43,6 +43,18 @@ const Feed = () => {
         </Typography>
 
         <Videos videos={videos} />
+        
+        <Typography variant="body2" sx={{ mt: 4, mb: 2, color: "#fff", textAlign: "center" }}>
+          Developed by{" "}
+          <a
+            href="https://github.com/alanbabychan"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#FC1503", textDecoration: "none", fontWeight: 600 }}
+          >
+            KIDDO
+          </a>
+        </Typography>
       </Box>
     </Stack>
   );

@@ -13,8 +13,29 @@ const Signup = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const { email, mobile } = formData;
+    
+    // Validate email format
+    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      setError('Please enter a valid email address');
+      return false;
+    }
+    
+    // Validate mobile number (exactly 10 digits)
+    if (!/^\d{10}$/.test(mobile)) {
+      setError('Mobile number must be exactly 10 digits');
+      return false;
+    }
+    
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) return;
+    
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     
     if (users.find(u => u.email === formData.email || u.mobile === formData.mobile)) {

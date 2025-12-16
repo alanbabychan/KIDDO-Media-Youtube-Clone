@@ -12,3 +12,6 @@ export { default as Sidebar } from './Sidebar';
 export { default as Login } from './Login';
 export { default as Signup } from './Signup';
 export { default as ForgotPassword } from './ForgotPassword';
+export { default as SubscriptionPlans } from './SubscriptionPlans';
+export { default as PaymentGateway } from './PaymentGateway';
+export { default as AdBanner } from './AdBanner';
